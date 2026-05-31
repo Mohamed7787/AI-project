@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ai.GameController"
+            prefWidth="760" prefHeight="820"
+            style="-fx-background-color: #1A252F;">
+
+    <!-- ═══════════════════════════════════════════════
+         TOP BAR  –  player info & turn indicator
+         ═══════════════════════════════════════════════ -->
+    <top>
+        <HBox alignment="CENTER" spacing="0"
+              style="-fx-background-color: #2C3E50; -fx-padding: 12 20 12 20;">
+
+            <!-- Player 1 info -->
+            <VBox alignment="CENTER_LEFT" prefWidth="220" spacing="4">
+                <Label text="● PLAYER 1"
+                       style="-fx-font-size: 15px; -fx-font-weight: bold;
+                              -fx-text-fill: #E74C3C;"/>
+                <HBox spacing="8" alignment="CENTER_LEFT">
+                    <Label text="Walls:"
+                           style="-fx-font-size: 13px; -fx-text-fill: #BDC3C7;"/>
+                    <Label fx:id="lblP1Walls" text="10"
+                           style="-fx-font-size: 15px; -fx-font-weight: bold;
+                                  -fx-text-fill: #ECF0F1;"/>
+                </HBox>
+            </VBox>
+
+            <!-- Turn / status indicator (centre) -->
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS" spacing="4">
+                <Label fx:id="lblTurn" text="Player 1's Turn"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold;
+                              -fx-text-fill: #F0C040;"/>
+                <Label fx:id="lblMode" text="Mode: Move Pawn"
+                       style="-fx-font-size: 12px; -fx-text-fill: #95A5A6;"/>
+            </VBox>
+
+            <!-- Player 2 info -->
+            <VBox alignment="CENTER_RIGHT" prefWidth="220" spacing="4">
+                <Label text="● PLAYER 2"
+                       style="-fx-font-size: 15px; -fx-font-weight: bold;
+                              -fx-text-fill: #2980B9;"/>
+                <HBox spacing="8" alignment="CENTER_RIGHT">
+                    <Label text="Walls:"
+                           style="-fx-font-size: 13px; -fx-text-fill: #BDC3C7;"/>
+                    <Label fx:id="lblP2Walls" text="10"
+                           style="-fx-font-size: 15px; -fx-font-weight: bold;
+                                  -fx-text-fill: #ECF0F1;"/>
+                </HBox>
+            </VBox>
+
+        </HBox>
+    </top>
+
+    <!-- ═══════════════════════════════════════════════
+         CENTER  –  game board canvas
+         ═══════════════════════════════════════════════ -->
+    <center>
+        <Canvas fx:id="gameCanvas" width="644" height="644"/>
+    </center>
+
+    <!-- ═══════════════════════════════════════════════
+         BOTTOM BAR  –  controls & message
+         ═══════════════════════════════════════════════ -->
+    <bottom>
+        <VBox style="-fx-background-color: #2C3E50;">
+
+            <!-- Message row -->
+            <HBox alignment="CENTER" style="-fx-padding: 6 20 2 20;">
+                <Label fx:id="lblMessage" text=""
+                       style="-fx-font-size: 13px; -fx-text-fill: #E67E22;
+                              -fx-font-weight: bold;"/>
+            </HBox>
+
+            <!-- Controls row -->
+            <HBox alignment="CENTER" spacing="12"
+                  style="-fx-padding: 8 20 14 20;">
+
+                <!-- Mode toggle: Move Pawn / Place Wall -->
+                <ToggleButton fx:id="btnWallMode"
+                              text="🧱  Place Wall"
+                              prefWidth="140" prefHeight="38"
+                              onAction="#onToggleWallMode"
+                              style="-fx-font-size: 13px;
+                                     -fx-background-color: #7F8C8D;
+                                     -fx-text-fill: white;
+                                     -fx-background-radius: 6;
+                                     -fx-cursor: hand;"/>
+
+                <!-- Wall orientation toggle -->
+                <ToggleButton fx:id="btnOrientation"
+                              text="↔  Horizontal"
+                              prefWidth="140" prefHeight="38"
+                              onAction="#onToggleOrientation"
+                              style="-fx-font-size: 13px;
+                                     -fx-background-color: #7F8C8D;
+                                     -fx-text-fill: white;
+                                     -fx-background-radius: 6;
+                                     -fx-cursor: hand;"/>
+
+                <Region prefWidth="20"/>
+
+                <!-- Reset button -->
+                <Button text="↺  New Game"
+                        prefWidth="130" prefHeight="38"
+                        onAction="#onReset"
+                        style="-fx-font-size: 13px; -fx-font-weight: bold;
+                               -fx-background-color: #C0392B;
+                               -fx-text-fill: white;
+                               -fx-background-radius: 6;
+                               -fx-cursor: hand;"/>
+
+                <!-- Back to menu -->
+                <Button text="⬅  Menu"
+                        prefWidth="110" prefHeight="38"
+                        onAction="#onBackToMenu"
+                        style="-fx-font-size: 13px;
+                               -fx-background-color: #555;
+                               -fx-text-fill: white;
+                               -fx-background-radius: 6;
+                               -fx-cursor: hand;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

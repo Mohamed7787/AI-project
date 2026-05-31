@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="ai.MainMenuController"
+      prefWidth="500" prefHeight="620"
+      alignment="CENTER" spacing="16"
+      style="-fx-background-color: #2C3E50;">
+
+    <padding>
+        <Insets top="45" bottom="45" left="60" right="60"/>
+    </padding>
+
+    <!-- Title -->
+    <Label text="QUORIDOR"
+           style="-fx-font-size: 52px;
+                  -fx-font-weight: bold;
+                  -fx-text-fill: #F0C040;
+                  -fx-font-family: 'Georgia';"/>
+
+    <Label text="Strategy Board Game"
+           style="-fx-font-size: 16px;
+                  -fx-text-fill: #BDC3C7;"/>
+
+    <Region prefHeight="20"/>
+
+    <!-- Human vs Human -->
+    <Label text="SELECT GAME MODE"
+           style="-fx-font-size: 14px;
+                  -fx-font-weight: bold;
+                  -fx-text-fill: #ECF0F1;"/>
+
+    <Button fx:id="btnHvH"
+            text="👤  Human  vs  Human  👤"
+            prefWidth="320" prefHeight="55"
+            onAction="#onHumanVsHuman"
+            style="-fx-font-size: 16px;
+                   -fx-font-weight: bold;
+                   -fx-background-color: #27AE60;
+                   -fx-text-fill: white;
+                   -fx-background-radius: 8;
+                   -fx-cursor: hand;"/>
+
+    <Region prefHeight="10"/>
+
+    <!-- AI difficulty label -->
+    <Label text="HUMAN  vs  COMPUTER"
+           style="-fx-font-size: 14px;
+                  -fx-font-weight: bold;
+                  -fx-text-fill: #ECF0F1;"/>
+
+    <!-- Easy -->
+    <Button fx:id="btnEasy"
+            text="🤖  Easy"
+            prefWidth="320" prefHeight="50"
+            onAction="#onHumanVsAIEasy"
+            style="-fx-font-size: 15px;
+                   -fx-font-weight: bold;
+                   -fx-background-color: #2ECC71;
+                   -fx-text-fill: white;
+                   -fx-background-radius: 8;
+                   -fx-cursor: hand;"/>
+
+    <!-- Medium -->
+    <Button fx:id="btnMedium"
+            text="🤖  Medium"
+            prefWidth="320" prefHeight="50"
+            onAction="#onHumanVsAIMedium"
+            style="-fx-font-size: 15px;
+                   -fx-font-weight: bold;
+                   -fx-background-color: #E67E22;
+                   -fx-text-fill: white;
+                   -fx-background-radius: 8;
+                   -fx-cursor: hand;"/>
+
+    <!-- Hard -->
+    <Button fx:id="btnHard"
+            text="🤖  Hard"
+            prefWidth="320" prefHeight="50"
+            onAction="#onHumanVsAIHard"
+            style="-fx-font-size: 15px;
+                   -fx-font-weight: bold;
+                   -fx-background-color: #C0392B;
+                   -fx-text-fill: white;
+                   -fx-background-radius: 8;
+                   -fx-cursor: hand;"/>
+
+    <Region prefHeight="10"/>
+
+    <!-- Footer -->
+    <Label text="CSE472s · Spring 2026"
+           style="-fx-font-size: 12px;
+                  -fx-text-fill: #7F8C8D;"/>
+
+</VBox>
