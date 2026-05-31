@@ -97,6 +97,6 @@ A desktop implementation of the classic **Quoridor** board game built with **Jav
 
 ## Demo Video
 
-[**Click here to watch the demo video**](PUT_YOUR_VIDEO_LINK_HERE)
+[**Click here to watch the demo video**](https://drive.google.com/drive/folders/16eMxN8A454wX3pF5Lz0_PzPqQCi2bJ0N?usp=drive_link)
 
 ---
